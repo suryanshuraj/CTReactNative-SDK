@@ -1,0 +1,35 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.rnsdktest">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+      android:name=".MainApplication"
+      android:label="@string/app_name"
+      android:icon="@mipmap/ic_launcher"
+      android:roundIcon="@mipmap/ic_launcher_round"
+      android:allowBackup="false"
+      android:theme="@style/AppTheme">
+      <activity
+        android:name=".MainActivity"
+        android:label="@string/app_name"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+        android:launchMode="singleTask"
+        android:windowSoftInputMode="adjustResize">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+      </activity>
+      <service android:name=".MyFirebaseMessagingService" >
+               <intent-filter>
+                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+               </intent-filter>
+        </service>
+        <meta-data android:name="CLEVERTAP_ACCOUNT_ID" android:value="65R-654-5Z6Z" />
+        <meta-data android:name="CLEVERTAP_TOKEN" android:value="456-256" />
+        <meta-data android:name="CLEVERTAP_USE_GOOGLE_AD_ID" android:value="1"/>
+        <meta-data android:name="CLEVERTAP_REGION" android:value="eu1"/>
+    </application>
+</manifest>
